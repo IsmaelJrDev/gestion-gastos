@@ -1,0 +1,41 @@
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de configuración de entorno
+.env
+.env.local
+.env.*.local
+
+# Dependencias
+node_modules/
+vendor/
+
+# Archivos de compilación y salida
+dist/
+build/
+out/
+*.log
+
+# Archivos de IDE
+.vscode/
+.idea/
+*.iml
+
+# Archivos de control de versiones
+*.lock
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Archivos temporales
+*.tmp
+*.swp
+*.bak
+*.orig
+
+# Archivos específicos de Linux
+*.pid
+
+# Otros
+coverage/
