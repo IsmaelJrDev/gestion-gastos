@@ -1,35 +1,35 @@
-// Importación de mongoose
-const mongoose = require('mongoose');
+
+const mongoose = require("mongoose");
 
 const transactionSchema = new mongoose.Schema({
-    amount: {
+    amount:{
         type: Number,
         required: true
     },
-    date: {
+    date:{
         type: Date,
-        default: Date.now // Fecha por defecto es la fecha actual
+        default: Date.now
     },
-    type: {
+    type:{
         type: String,
         required: true,
-        enum: ['ingreso', 'egreso'], // Solo se permiten estos dos valores
+        enum:["ingreso", "egreso"],
     },
-    description: {
+    description:{
         type: String,
-        required: true
     },
-    user: {
-        type: mongoose.Schema.Types.ObjectId, // Obtenemos el ID del usuario
-        ref: 'User', // Referencia al modelo de usuario
-        required: true
+    user:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref:"User",
+        required: true,
+        index: true, 
     },
-    category: {
-        type: mongoose.Schema.Types.ObjectId, // Obtenemos el ID de la categoría
-        ref: 'Category', // Referencia al modelo de categoría
-        required: true
+    category:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref:"Category",
+        required: true,
+        index: true,
     }
 });
 
-// Exporta el modelo de transacción
-model.exports = mongoose.model('Transaction', transactionSchema); 
+module.exports = mongoose.model("Transaction", transactionSchema);
