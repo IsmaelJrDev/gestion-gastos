@@ -1,4 +1,4 @@
-const TransactionService = require("../services/transaction.service");
+const TransactionService = require("../service/transaction.service");
 
 // Funcion para crear una transacción
 module.exports.create = async (req, res, next) => {
@@ -25,7 +25,7 @@ module.exports.getAll = async (req, res, next) => {
 
 module.exports.getByDate = async (req, res, next) => {
     const id = req.user._id;
-    const date = req.body.date;
+    const date = req.params.date;
     try {
         const fechas = await TransactionService.getByDate(id, date);
         res.json(fechas);
@@ -36,7 +36,7 @@ module.exports.getByDate = async (req, res, next) => {
 
 module.exports.getByCategoryId = async (req, res, next) => {
     const id = req.user._id;
-    const categoryId = req.body.category;
+    const categoryId = req.params.category;
     try {
         const categorias = await TransactionService.getByCategoryId(
             id,

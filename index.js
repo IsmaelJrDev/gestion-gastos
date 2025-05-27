@@ -1,5 +1,6 @@
 const express = require("express");
 const handleError = require("./middlewares/error.middleware");
+const TransactionRoutes = require("./routes/transaction.routes");
 const CategoryRoutes = require("./routes/category.routes");
 const userRoutes = require("./routes/user.route");
 const cors = require("cors");
@@ -17,6 +18,7 @@ app.use(handleError);
 //Cargar rutas
 app.use("/user", userRoutes);
 app.use("/category", CategoryRoutes);
+app.use("/transaction", TransactionRoutes);
 
 //Cargar la base de datos
 mongoose
